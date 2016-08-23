@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import CompanyStore from '../stores/CompanyStore';
 import StockActions from '../actions/StockActions';
 import uuid from 'uuid';
-import ListCompany from './ListCompany'
+import ListCompany from './ListCompany';
 
 export default class CompanySearch extends Component {
   constructor(){
@@ -67,7 +67,7 @@ export default class CompanySearch extends Component {
           </tr>
         </thead>
         <tbody>
-          {listCompanies}
+         {listCompanies}
         </tbody>
       </table>
       </div>

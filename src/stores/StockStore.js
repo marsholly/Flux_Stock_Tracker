@@ -1,33 +1,19 @@
-import { EventEmitter } from 'events'
-import AppDispatcher from '../AppDispatcher';
-import uuid from 'uuid';
+import { EventEmitter } from 'events';
+import AppDispatcher from '../AppDispatcher'
 
-let _todos = [];
+let stock = [];
 
-class TodoStore extends EventEmitter {
+class StockStore extends EventEmitter{
   constructor(){
     super();
 
-    AppDispatcher.register(action => {
+    AppDispatcher.register(action =>{
       switch (action.type) {
-        case 'RECEIVE_TODOS':
-          _todos = action.todos;
+        case 'RECEIVE_STOCK':
+          stock = action.stockObj;
           this.emit('CHANGE');
           break;
-        case'RECEIVE_ONE_TODO':
-          var { todo } = action;
-          _todos.push(action.todo);
-          this.emit('CHANGE');
-          break;
-        case 'CREATE_TODO':
-          //action.todo --->{task: 'DO stuff' }
-          var { todo } = action;
-          todo._id = uuid();
-          todo._createAt = Date.now();
-          todo.isComplete = false;
-          _todos.push(todo);
-          this.emit('CHANGE');
-          break;
+
       }
     });
   }
@@ -37,12 +23,12 @@ class TodoStore extends EventEmitter {
   }
 
   stopListening(cb){
-    this.removeListener('CHANGE', cb);
+    this.removeListener('CHANGE',cb);
   }
 
   getAll(){
-    return _todos;
+    return stock;
   }
 }
 
-export default new TodoStore();
+export default new StockStore();

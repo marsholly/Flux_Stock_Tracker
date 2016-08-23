@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import CompanySearch from './CompanySearch';
 
-
 export default class App extends Component{
   render(){
     return(

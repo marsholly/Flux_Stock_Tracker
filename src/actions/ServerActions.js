@@ -6,6 +6,12 @@ const ServerActions ={
       type: 'RECEIVE_All_COMPANIES',
       companyArr
     })
+  },
+  receiveStock(stockObj){
+    AppDispatcher.dispatch({
+      type: 'RECEIVE_STOCK',
+      stockObj
+    })
   }
 }
 
