@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import StockStore from '../stores/StockStore';
 import StockActions from '../actions/StockActions';
+import {Link} from 'react-router';
 
 
 export default class StockList extends Component {
@@ -57,6 +58,9 @@ export default class StockList extends Component {
 
     return (
       <div>
+        <Link to='/'>
+          <button className='btn btn-primary'>Home</button>
+        </Link>
         <table className="table">
           <thead>
             <tr>

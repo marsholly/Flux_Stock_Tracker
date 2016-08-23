@@ -37,7 +37,7 @@ export default class ListCompany extends Component{
   render(){
     let stockData = this.state.stock;
     let {Name, Symbol, Exchange} = this.props;
-    let url = 'quote/' + this.props.Symbol;
+    let url = '/quote/' + this.props.Symbol;
     return (
         <tr>
           <td>{Name}</td>

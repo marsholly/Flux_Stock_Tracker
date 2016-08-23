@@ -63,7 +63,7 @@ export default class CompanySearch extends Component {
             <th>Company Name</th>
             <th>Symbol</th>
             <th>Exchange</th>
-            <th>Detail</th>
+            <th>Quote</th>
           </tr>
         </thead>
         <tbody>
